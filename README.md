@@ -65,6 +65,21 @@ Anyone re-fetching the full 5,000-image sets has to find them again from SDPose-
 buys is also limited: 4,477 of those images are not redistributable, which is why they are not
 here.
 
+## How renditions.parquet was built
+
+`build_parquet.py` is the script that produced the published release. It reads the three
+upstream zips, applies the 523 allowlist, drops the `__MACOSX` entries, writes the parquet and
+then reads it back and compares a sha256 of every payload against the one it took out of the
+zip.
+
+```sh
+python build_parquet.py <workspace-root> <out-dir>
+```
+
+It is committed because a release nobody can rebuild is a release nobody can check. The zips
+it consumes are not in this repository, so re-running it needs them fetched first, and the
+note above about the missing Drive ids applies.
+
 ## What was dropped on the way in
 
 | | per archive |
