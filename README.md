@@ -55,8 +55,15 @@ already carried by `images.parquet`, and a derivable column can disagree with it
 `fetch.sh` downloads it and checks the row count and schema.
 
 ```sh
-./fetch.sh          # pulls renditions.parquet from the v1 release and validates it
+./fetch.sh              # pulls renditions.parquet from the v1 release and validates it
+./fetch_upstream.sh ID OUT   # the original Google Drive route, kept for provenance
 ```
+
+**A gap worth naming rather than leaving to be discovered.** `fetch_upstream.sh` takes a Drive
+file id as an argument, and those ids are not recorded anywhere. They were passed by hand.
+Anyone re-fetching the full 5,000-image sets has to find them again from SDPose-OOD. What that
+buys is also limited: 4,477 of those images are not redistributable, which is why they are not
+here.
 
 ## What was dropped on the way in
 
