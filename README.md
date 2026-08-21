@@ -4,8 +4,8 @@ The COCO-OOD stylized evaluation sets, filtered to the 523 licence-clean images 
 parquet.
 
 Three restylings of COCO val2017 — oil, ukiyo-e and algorithmic corruption — from SDPose-OOD,
-which built them with CycleGAN and StyTR² deliberately, *"to avoid introducing priors from
-large-scale pretrained diffusion models"*. A benchmark restyled by a diffusion model would
+which built them with CycleGAN and StyTR² deliberately, _"to avoid introducing priors from
+large-scale pretrained diffusion models"_. A benchmark restyled by a diffusion model would
 have measured that model's idea of a person rather than the robustness under test.
 
 ## Evaluation only, twice over
@@ -39,9 +39,9 @@ assumed.
 Essential Tuple Normal Form. Interned vocabulary, satellite relation for the payload, no
 NULLs, no derivable columns.
 
-| file | columns | rows | tracked |
-| --- | --- | --- | --- |
-| `styles.parquet` | `style_id` int8 PK, `name` string | 3 | yes |
+| file                 | columns                                                | rows  | tracked       |
+| -------------------- | ------------------------------------------------------ | ----- | ------------- |
+| `styles.parquet`     | `style_id` int8 PK, `name` string                      | 3     | yes           |
 | `renditions.parquet` | `style_id` int8 FK, `image_id` int32 FK, `jpeg` binary | 1,569 | release asset |
 
 `image_id` is the COCO id, so a rendition joins straight to `dataflow-coco-gemx`'s
@@ -82,12 +82,12 @@ note above about the missing Drive ids applies.
 
 ## What was dropped on the way in
 
-| | per archive |
-| --- | --- |
-| entries in the zip | 10,001 |
-| `__MACOSX/` resource forks | 5,001 |
-| images outside the 523 allowlist | ~4,477 |
-| kept | 523 |
+|                                  | per archive |
+| -------------------------------- | ----------- |
+| entries in the zip               | 10,001      |
+| `__MACOSX/` resource forks       | 5,001       |
+| images outside the 523 allowlist | ~4,477      |
+| kept                             | 523         |
 
 Roughly half of every upstream archive was macOS resource-fork junk carrying no image data.
 
@@ -99,8 +99,8 @@ maps compared: 1,569 rows, zero mismatches.
 
 The tooling in this repository is licensed under either of
 
-* Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
-* MIT License ([LICENSE-MIT](LICENSE-MIT))
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
+- MIT License ([LICENSE-MIT](LICENSE-MIT))
 
 at your option. `SPDX-License-Identifier: Apache-2.0 OR MIT`
 
