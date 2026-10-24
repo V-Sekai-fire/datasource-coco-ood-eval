@@ -4,7 +4,7 @@ Stylized restylings of the licence-clean COCO `val2017` person images, stored as
 
 ## What it is for
 
-The restylings come from the SDPose-OOD benchmark, which made them with style-transfer networks rather than a diffusion model, and this repository keeps only the images whose licences allow commercial use and derivatives. The set is evaluation-only twice over: it derives from the blinded `val2017` holdout, and it is generated rather than constructed. It never enters a training corpus and is not consulted while developing; RFD 1141 states the rule.
+The restylings come from the SDPose-OOD benchmark, which made them with style-transfer networks rather than a diffusion model, and this repository keeps only the images whose licences allow commercial use and derivatives. The set is evaluation-only twice over: it derives from the blinded `val2017` holdout, and it is generated rather than constructed. It never enters a training corpus and is not consulted while developing; RFD66606-1141 states the rule.
 
 The data is in Essential Tuple Normal Form. `styles.parquet` is tracked, and the renditions are a release asset that `fetch.sh` downloads and validates. `build_parquet.py` rebuilds the release from the upstream archives, which `fetch_upstream.sh` fetches given their upstream file ids; those ids are not recorded here.
 
